@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    # Enable this if using SSR (required)
+    enable_edge_function = true
+    # Enable this if debugging build issues
+    debug = true
+    # To enable ISR (optional)
+    enable_isr = true
+
+[context.production]
+  # You can also add environment variables here
+  environment = { NODE_VERSION = "18" }

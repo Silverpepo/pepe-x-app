@@ -54,7 +54,7 @@ export default function AuctionPage() {
                   <h3 className="font-semibold">How to Participate</h3>
                   <ol className="list-decimal pl-5 text-secondary-foreground space-y-2 text-sm md:text-base">
                     <li>Connect your wallet using the button at the bottom of the page</li>
-                    <li>Click on "Place Bid" when you're comfortable with the current price</li>
+                    <li>Click on &quot;Place Bid&quot; when you&apos;re comfortable with the current price</li>
                     <li>Enter the amount of ETH you want to contribute</li>
                     <li>Confirm the transaction in your wallet</li>
                     <li>Once your transaction is confirmed, your tokens will be allocated based on the final price</li>

@@ -306,7 +306,7 @@ export default function AuctionBidSlip() {
                     />
                     <p className="font-bold">No participation yet</p>
                     <p className="mt-6 w-[230px] text-center text-base font-[450] text-secondary-foreground">
-                      You haven't participated in the auction yet. Place a bid to get PEPO tokens.
+                      You haven&apos;t participated in the auction yet. Place a bid to get PEPO tokens.
                     </p>
                   </div>
                 )}

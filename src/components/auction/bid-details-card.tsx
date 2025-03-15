@@ -50,8 +50,8 @@ export default function BidDetailsCard({ userInfo }: { userInfo: any }) {
           
           <div className="pt-2 border-t border-border">
             <p className="text-xs text-secondary-foreground">
-              Your auction participation details are shown above. As tokens become vested over time, 
-              you'll be able to claim them from the Token Distribution section below.
+              Your auction participation details are shown above. As tokens become vested over time,
+              you&apos;ll be able to claim them from the Token Distribution section below.
             </p>
           </div>
         </div>

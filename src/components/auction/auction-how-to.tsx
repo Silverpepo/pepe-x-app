@@ -29,7 +29,7 @@ export default function AuctionHowTo() {
                 </p>
                 <p className="flex items-center">
                   <span className="mr-2 text-xs">•</span>
-                  Buy tokens at a price you're comfortable with
+                  Buy tokens at a price you&apos;re comfortable with
                 </p>
               </div>
             </div>
@@ -42,7 +42,7 @@ export default function AuctionHowTo() {
                 </p>
                 <p className="flex items-center">
                   <span className="mr-2 text-xs">•</span>
-                  Click "Place Bid" to confirm your participation
+                  Click &quot;Place Bid&quot; to confirm your participation
                 </p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function AuctionHowTo() {
               <div className="space-y-1.5 pl-4">
                 <p className="flex items-center">
                   <span className="mr-2 text-xs">•</span>
-                  Track token vesting in "My Tokens" tab
+                  Track token vesting in &quot;My Tokens&quot; tab
                 </p>
                 <p className="flex items-center">
                   <span className="mr-2 text-xs">•</span>

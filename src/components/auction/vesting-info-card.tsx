@@ -23,6 +23,22 @@ export default function VestingInfoCard({ distributionInfo }: { distributionInfo
   const [claimingUnlocked, setClaimingUnlocked] = useState(false)
   const [claimingVested, setClaimingVested] = useState(false)
   const [success, setSuccess] = useState(false)
+  
+  // Contract interactions - moved before any conditional returns
+  const { writeAsync: claimTokens, error: claimError } = usePepoDutchAuctionClaimTokens({
+    address: dutchAuctionAddress
+  })
+  
+  const { isLoading: txLoading, isSuccess } = useWaitForTransaction({
+    hash: txHash,
+    onSuccess: () => {
+      setSuccess(true)
+      setIsLoading(false)
+      setClaimingUnlocked(false)
+      setClaimingVested(false)
+      setTimeout(() => setSuccess(false), 5000)
+    }
+  })
 
   if (!distributionInfo) {
     return (
@@ -45,8 +61,8 @@ export default function VestingInfoCard({ distributionInfo }: { distributionInfo
   
   // Vesting status
   const vestingStatus = distributionInfo.vestingStatus || {}
-  const vestingPercentage = vestingStatus.nextUnlockTime && vestingStatus.totalVested 
-    ? Math.min(100, Math.floor((Date.now() / 1000 - Number(vestingStatus.lastClaimTime)) / 
+  const vestingPercentage = vestingStatus.nextUnlockTime && vestingStatus.totalVested
+    ? Math.min(100, Math.floor((Date.now() / 1000 - Number(vestingStatus.lastClaimTime)) /
         (Number(vestingStatus.nextUnlockTime) - Number(vestingStatus.lastClaimTime)) * 100))
     : 0
 
@@ -55,21 +71,6 @@ export default function VestingInfoCard({ distributionInfo }: { distributionInfo
   const vestedPercentage = (parseFloat(vestedAmount) / parseFloat(totalAllocation)) * 100
   const claimableUnlockedNum = parseFloat(claimableUnlocked)
   const claimableVestedNum = parseFloat(claimableVested)
-  
-  // Contract interactions
-  const { writeAsync: claimTokens, error: claimError } = usePepoDutchAuctionClaimTokens({
-    address: dutchAuctionAddress
-  })
-  const { isLoading: txLoading, isSuccess } = useWaitForTransaction({
-    hash: txHash,
-    onSuccess: () => {
-      setSuccess(true)
-      setIsLoading(false)
-      setClaimingUnlocked(false)
-      setClaimingVested(false)
-      setTimeout(() => setSuccess(false), 5000)
-    }
-  })
 
   // Handle claiming tokens
   const handleClaim = async (claimUnlocked: boolean, claimVested: boolean) => {
