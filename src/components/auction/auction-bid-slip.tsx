@@ -237,7 +237,7 @@ export default function AuctionBidSlip() {
                     </Form>
                     
                     <div className="mt-4 text-xs text-secondary-foreground">
-                      <p>• Final token amount may vary based on the auction's closing price</p>
+                      <p>• Final token amount may vary based on the auction&apos;s closing price</p>
                       <p>• 50% of tokens are unlocked immediately after auction ends</p>
                       <p>• 50% vest linearly over 6 months</p>
                     </div>
