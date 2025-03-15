@@ -93,7 +93,7 @@ export default function ChainlinkInfoModal({ isOpen, onClose, onDontShowAgain }:
               onChange={(e) => setDontShowAgain(e.target.checked)}
             />
             <label htmlFor="dontShowAgain" className="text-xs sm:text-sm text-secondary-foreground">
-              Don't show this again
+              Don&apos;t show this again
             </label>
           </div>
         </div>

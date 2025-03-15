@@ -75,7 +75,7 @@ export default function AuctionPage() {
                 <div className="space-y-2">
                   <h3 className="font-semibold">Claiming Tokens</h3>
                   <p className="text-secondary-foreground text-sm md:text-base">
-                    You can claim your tokens from the "My Tokens" tab after the auction ends. Both unlocked and vested tokens can be claimed as they become available.
+                    You can claim your tokens from the &quot;My Tokens&quot; tab after the auction ends. Both unlocked and vested tokens can be claimed as they become available.
                   </p>
                 </div>
               </TabsContent>
