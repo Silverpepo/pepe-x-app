@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 223 30% 9%;
+    --foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 220 7% 74%;
+    --popover: 222 51% 13%;
+    --popover-foreground: 0 0% 100%;
+    --card: 222 26% 13%;
+    --card-foreground: 0 0% 100%;
+    --border: 222 38% 19%;
+    --input: 222 26% 13%;
+    --primary: 219 17% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 29% 24%;
+    --secondary-foreground: 221 8% 46%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+    --alert: 45, 68%, 58%, 1;
+    
+    /* Star variables */
+    --stars-small: none;
+    --stars-medium: none;
+    --stars-big: none;
+    
+    /* Animation variables */
+    --orb-translate-x: 0px;
+    --orb-translate-y: 0px;
+  }
+  
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 216 34% 17%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+/* Starry Night Animation */
+.stars-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  box-shadow: var(--stars-small);
+  animation: animStar 50s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 100vh;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: var(--stars-small);
+}
+
+#stars2 {
+  width: 2px;
+  height: 2px;
+  box-shadow: var(--stars-medium);
+  animation: animStar 100s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 100vh;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: var(--stars-medium);
+}
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  box-shadow: var(--stars-big);
+  animation: animStar 150s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 100vh;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: var(--stars-big);
+}
+
+/* Landing Page Animations */
+.hero-content {
+  animation: floatAnimation 3s infinite ease-in-out alternate;
+}
+
+.glow-effect {
+  animation: glowAnimation 2s infinite alternate ease-in-out;
+}
+
+.cta-container {
+  animation: pulseAnimation 2s infinite alternate ease-in-out;
+}
+
+/* Floating orbs with CSS variables for JS manipulation */
+.floating-orb {
+  transform: translate(var(--orb-translate-x), var(--orb-translate-y));
+  transition: transform 0.05s ease-out;
+}
+
+/* Custom circular pulse for the Pepe astronaut */
+@keyframes circlePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(55, 91, 210, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 20px rgba(55, 91, 210, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(55, 91, 210, 0);
+  }
+}
+
+.astro-pulse {
+  animation: circlePulse 2s infinite ease-in-out;
+  border-radius: 50%; /* Ensure the pulse effect is circular */
+}
+
+/* Keyframe Animations */
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glowAnimation {
+  0% {
+    filter: brightness(1) blur(0px);
+  }
+  100% {
+    filter: brightness(1.3) blur(5px);
+  }
+}
+
+/* Glow without blur for PEPE-X title */
+.glow-no-blur {
+  animation: glowNoBlurAnimation 2s infinite alternate ease-in-out;
+}
+
+@keyframes glowNoBlurAnimation {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes pulseAnimation {
+  0% {
+    box-shadow: 0 0 0 rgba(55, 91, 210, 0);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(55, 91, 210, 0.5);
+  }
+}
+
+/* Star twinkling animation */
+.twinkling-star {
+  animation: twinkle 5s infinite ease-in-out;
+  animation-delay: var(--twinkle-delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
