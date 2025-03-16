@@ -1,7 +1,0 @@
-# Netlify redirects for Next.js
-# Ensure that SPA routing works correctly with Next.js App Router
-# Main route fallback for client-side navigation
-/*    /.netlify/functions/next    200
-
-# Handle 404 errors with our custom not-found page
-/404    /404.html    404
