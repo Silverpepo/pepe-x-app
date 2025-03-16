@@ -14,7 +14,7 @@ export const priceFeedAddresses = {
   'BTC-USD': process.env.NEXT_PUBLIC_BTC_USD_PRICE_FEED_ADDRESS as Address,
   'ETH-USD': process.env.NEXT_PUBLIC_ETH_USD_PRICE_FEED_ADDRESS as Address,
   'LINK-USD': process.env.NEXT_PUBLIC_LINK_USD_PRICE_FEED_ADDRESS as Address,
-  'CBETH-ETH': process.env.NEXT_PUBLIC_CBETH_ETH_PRICE_FEED_ADDRESS as Address,
+  'CBETH-USD': process.env.NEXT_PUBLIC_CBETH_USD_PRICE_FEED_ADDRESS as Address,
 }
 
 

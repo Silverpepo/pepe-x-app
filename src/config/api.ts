@@ -25,7 +25,7 @@ export const marketLogos: {
   'CAKE-USD': '/tokens/cake.svg',
   'OP-USD': '/tokens/optimism.svg',
   'BASE-USD': '/tokens/base.svg',
-  'CBETH-ETH': '/tokens/cbeth.svg'
+  'CBETH-USD': '/tokens/cbeth.svg'
 }
 
 // Helper function to transform contract data
