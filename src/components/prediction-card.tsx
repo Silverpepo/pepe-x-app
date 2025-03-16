@@ -152,7 +152,7 @@ export default function PredictionCard({
                   
                   {isResolved && (
                     <div className={`flex min-w-[60px] items-center justify-end ${isPositive ? "text-green-400" : "text-red-400"}`}>
-                      {isPositive ? "+" : ""}{formatNumber(priceChange)}%
+                      {isPositive ? "+" : ""}{formatNumber(priceChange, 2)}%
                     </div>
                   )}
                 </div>
@@ -165,7 +165,7 @@ export default function PredictionCard({
                 <p className="font-medium">
                   {windowLoading ? 'Loading...' :
                     isError ? 'Error loading data' :
-                      `$${mergedWindow.startPrice > 0 ? formatNumber(mergedWindow.startPrice) : '0.00'}`}
+                      `$${mergedWindow.startPrice > 0 ? formatNumber(mergedWindow.startPrice, 2) : '0.00'}`}
                 </p>
               </div>
               <div>
@@ -173,7 +173,7 @@ export default function PredictionCard({
                 <p className="font-medium">
                   {windowLoading ? 'Loading...' :
                     isError ? 'Error loading data' :
-                      `$${mergedWindow.lockPrice > 0 ? formatNumber(mergedWindow.lockPrice) : '0.00'}`}
+                      `$${mergedWindow.lockPrice > 0 ? formatNumber(mergedWindow.lockPrice, 2) : '0.00'}`}
                 </p>
               </div>
               {isResolved && (
@@ -182,7 +182,7 @@ export default function PredictionCard({
                   <p className="font-medium">
                     {windowLoading ? 'Loading...' :
                       isError ? 'Error loading data' :
-                        `$${mergedWindow.closePrice > 0 ? formatNumber(mergedWindow.closePrice) : '0.00'}`}
+                        `$${mergedWindow.closePrice > 0 ? formatNumber(mergedWindow.closePrice, 2) : '0.00'}`}
                   </p>
                 </div>
               )}
